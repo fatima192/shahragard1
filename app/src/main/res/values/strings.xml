@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">شهراگرد</string>
-    <string name="login_name">Name</string>
+    <string name="app_name">proto5phase3</string>
     <string name="title_home">Home</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_maketrip">MakeTrip</string>
     <string name="title_profile">profile</string>
     <string name="title_search">search</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

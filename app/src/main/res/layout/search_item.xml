@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright 2014 The Android Open Source Project
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:gravity="center_vertical"
+    tools:layout_editor_absoluteX="20dp"
+    tools:layout_editor_absoluteY="81dp">
+
+    <ImageView
+    android:id="@+id/profile"
+    android:layout_width="50dp"
+    android:layout_height="52dp"
+    app:srcCompat="@drawable/ic_person_black_24dp"
+    tools:layout_editor_absoluteX="318dp"
+    tools:layout_editor_absoluteY="10dp"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
+
+    <TextView
+        android:id="@+id/start"
+        android:layout_width="51dp"
+        android:layout_height="wrap_content"
+        android:text="مبدا"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="18dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/them_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="نام خانوادگی"
+        tools:layout_editor_absoluteX="243dp"
+        tools:layout_editor_absoluteY="37dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/dest"
+        android:layout_width="51dp"
+        android:layout_height="wrap_content"
+        android:text="مقصد"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="37dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+    android:id="@+id/price"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="20000 R"
+    tools:layout_editor_absoluteX="16dp"
+    tools:layout_editor_absoluteY="27dp" />
+
+</android.support.constraint.ConstraintLayout>
