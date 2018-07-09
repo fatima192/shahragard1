@@ -13,6 +13,10 @@ import android.widget.LinearLayout;
 
 import com.example.asus.proto5phase3.Database.Model.Trip;
 import com.example.asus.proto5phase3.R;
+import com.example.asus.proto5phase3.SearchFragment;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 public class SearchResult extends Fragment {
@@ -33,7 +37,7 @@ public class SearchResult extends Fragment {
     protected RecyclerView mRecyclerView;
     protected CustomAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
-    protected Trip[] mDataset;
+    public  List<Trip> mDataset;
 
 
 
@@ -99,9 +103,9 @@ public class SearchResult extends Fragment {
      * from a local content provider or remote server.
      */
     private void initDataset() {
-        mDataset = new Trip[DATASET_COUNT];
-        for (int i = 0; i < DATASET_COUNT; i++) {
-           // mDataset[i] = "This is element #" + i;
-        }
+        mDataset = Arrays.asList(new Trip[DATASET_COUNT]);
+       for (int i = 0; i < SearchFragment.res.size(); i++) {
+        mDataset.add(SearchFragment.res.get(0));
+         }
     }
 }

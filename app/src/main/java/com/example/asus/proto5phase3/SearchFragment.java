@@ -1,8 +1,11 @@
 package com.example.asus.proto5phase3;
 
 import android.app.AlertDialog;
-import android.app.Fragment;
+import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,16 +13,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.asus.proto5phase3.Database.DatabaseHelper;
 import com.example.asus.proto5phase3.Database.Model.Trip;
 import com.example.asus.proto5phase3.RecyclerView.SearchResult;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 
 public class SearchFragment extends Fragment {
+    public static List  <Trip> res;
     Button btnSearch;
     EditText origin, destination, day, month, seats;
-    public static List<Trip> res;
 
     public static SearchFragment newInstance() {
         SearchFragment fragment = new SearchFragment();
@@ -27,11 +35,17 @@ public class SearchFragment extends Fragment {
 
 
     }
+    //  SearchActivity search;
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //      search= new SearchActivity();
+        //     search.creat();
 
     }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_search, container, false);
@@ -47,8 +61,8 @@ public class SearchFragment extends Fragment {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                view();
-                android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+//                view();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 SearchResult fragment = new SearchResult();
                 transaction.replace(R.id.frame_layout, fragment);
                 transaction.commit();
@@ -58,10 +72,16 @@ public class SearchFragment extends Fragment {
     }
 
     public void view() {
-      res=signIn.db.getTripsBySearch(origin.getText().toString(), destination.getText().toString(), day.getText().toString(), month.getText().toString(), seats.getText().toString());
-        //viewTrips(res);
+        res=signIn.db.getTripsBySearch(origin.getText().toString(), destination.getText().toString(), day.getText().toString(), month.getText().toString(), seats.getText().toString());
 
-        }
+
+        if(!res.isEmpty())
+            Toast.makeText(getContext(), "در ساخت سفر", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(getContext(), "fail", Toast.LENGTH_SHORT).show();
+    }
+
+
     public void viewTrips(final List<Trip> trips){
         // Cursor res = (Cursor) trips;
         StringBuffer buffer = new StringBuffer();
@@ -88,3 +108,4 @@ public class SearchFragment extends Fragment {
     }
 
 }
+

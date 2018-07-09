@@ -1,138 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
 
+    android:layout_height="match_parent"
     tools:layout_editor_absoluteY="81dp">
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/signUp_button"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/profile_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="38dp"
+        android:layout_marginEnd="23dp"
         android:text="sign in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/car_number"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="31dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:textColorHint="#000"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_above="@+id/name"
-        android:layout_alignStart="@+id/name"
-        android:layout_marginBottom="-117dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginStart="27dp"
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword"
-        android:textColorHint="#000" />
+        android:textColorHint="#000"
+        app:layout_constraintBottom_toTopOf="@+id/name"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <EditText
         android:id="@+id/name"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/age"
-        android:layout_marginTop="117dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
-        android:textColorHint="#000" />
-
-    <EditText
-        android:id="@+id/age"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/phone_number"
-        android:layout_marginBottom="212dp"
-        android:ems="10"
-        android:hint="age"
-        android:inputType="number"
-        android:textColorHint="#000" />
+        android:textColorHint="#000"
+        app:layout_constraintBottom_toTopOf="@+id/gender"
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <EditText
         android:id="@+id/gender"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/age"
-        android:layout_marginTop="165dp"
+        android:layout_height="0dp"
         android:ems="10"
         android:hint="gender"
         android:inputType="textPersonName"
-        android:textColorHint="#000" />
+        android:textColorHint="#000"
+        app:layout_constraintBottom_toTopOf="@+id/city"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <EditText
         android:id="@+id/city"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignStart="@+id/age"
-        android:layout_below="@+id/gender"
+        android:layout_height="0dp"
+        android:layout_marginBottom="7dp"
         android:ems="10"
         android:hint="city"
         android:inputType="textPersonName"
-        android:textColorHint="#000" />
+        android:textColorHint="#000"
+        app:layout_constraintBottom_toTopOf="@+id/age"
+        app:layout_constraintStart_toStartOf="@+id/gender"
+        app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="9dp"
+        android:ems="10"
+        android:hint="age"
+        android:inputType="number"
+        android:textColorHint="#000"
+        app:layout_constraintBottom_toTopOf="@+id/phone_number"
+        app:layout_constraintStart_toStartOf="@+id/city"
+        app:layout_constraintTop_toBottomOf="@+id/city" />
 
     <EditText
         android:id="@+id/phone_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/car_number"
-        android:layout_marginBottom="165dp"
+        android:layout_marginBottom="6dp"
         android:ems="10"
         android:hint="phone number"
         android:inputType="phone"
-        android:textColorHint="#000" />
+        android:textColorHint="#000"
+        app:layout_constraintBottom_toTopOf="@+id/car"
+        app:layout_constraintStart_toStartOf="@+id/age"
+        app:layout_constraintTop_toBottomOf="@+id/age" />
 
     <EditText
         android:id="@+id/car_number"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="65dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="66dp"
+        android:layout_marginEnd="19dp"
         android:layout_marginStart="27dp"
         android:ems="10"
         android:hint="car number"
         android:inputType="numberSigned"
-        android:textColorHint="#000" />
-
-    <ImageView
-        android:id="@+id/profile_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="23dp"
-        android:layout_marginTop="38dp" />
+        android:textColorHint="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/signUp_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car" />
 
     <EditText
         android:id="@+id/car"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/car_number"
-        android:layout_marginBottom="114dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:hint="car name"
         android:inputType="textPersonName"
-        android:textColorHint="#000" />
+        android:textColorHint="#000"
+        app:layout_constraintBottom_toTopOf="@+id/car_number"
+        app:layout_constraintStart_toStartOf="@+id/phone_number"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number" />
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/password"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Username"
-        android:textColorHint="#000"/>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="322dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginTop="31dp"
+        app:layout_constraintBottom_toTopOf="@+id/signUp_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/password"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_person_black_24dp" />
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

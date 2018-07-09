@@ -58,11 +58,11 @@ public class signIn extends AppCompatActivity {
 
     private void signin() {
         User user = new User(username.getText().toString(), password.getText().toString(), name.getText().toString(), gender.getText().toString(), age.getText().toString(), city.getText().toString(), number.getText().toString(), car.getText().toString(), carNumber.getText().toString());
-        if (db.findUserForSignUp(user.getUsername())) {
-            Toast.makeText(signIn.this, "این نام کاربری قبلا استفاده شده است", Toast.LENGTH_SHORT).show();
-
-
-        } else {
+//        if (db.findUserForSignUp(user.getUsername())) {
+//            Toast.makeText(signIn.this, "این نام کاربری قبلا استفاده شده است", Toast.LENGTH_SHORT).show();
+//
+//
+//        } else {
 
 
             boolean add = db.addNewUser(user);
@@ -76,4 +76,4 @@ public class signIn extends AppCompatActivity {
             }
         }
     }
-}
+

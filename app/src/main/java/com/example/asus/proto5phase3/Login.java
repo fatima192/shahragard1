@@ -22,7 +22,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.activity_login);
         username= findViewById(R.id.editText);
         password=findViewById(R.id.editText2);
         Log.d(TAG,"on create: Starting.");
@@ -42,17 +42,17 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 signIn.globalUser=signIn.db.findUser(username.getText().toString(), password.getText().toString());
-                if (signIn.globalUser==null){
-
-
-                }
-                else {
+//                if (signIn.globalUser==null){
+//
+//
+//                }
+//                else {
 
                     Log.d(TAG, "onclick: clicked button");
                     Intent intent = new Intent(Login.this, MainActivity.class);
                     startActivity(intent);
                 }
-            }
+//            }
         });
     }
 

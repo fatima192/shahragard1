@@ -26,12 +26,17 @@
     tools:layout_editor_absoluteY="81dp">
 
     <ImageView
-    android:id="@+id/profile"
-    android:layout_width="50dp"
-    android:layout_height="52dp"
-    app:srcCompat="@drawable/ic_person_black_24dp"
-    tools:layout_editor_absoluteX="318dp"
-    tools:layout_editor_absoluteY="10dp"
+        android:id="@+id/profile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/them_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_person_black_24dp"
         tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
 
@@ -39,35 +44,49 @@
         android:id="@+id/start"
         android:layout_width="51dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:text="مبدا"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/dest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/them_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
         android:text="نام خانوادگی"
-        tools:layout_editor_absoluteX="243dp"
-        tools:layout_editor_absoluteY="37dp"
+        app:layout_constraintBottom_toTopOf="@+id/dest"
+        app:layout_constraintEnd_toStartOf="@+id/profile"
+        app:layout_constraintStart_toEndOf="@+id/dest"
+        app:layout_constraintTop_toTopOf="@+id/dest"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/dest"
-        android:layout_width="51dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
         android:text="مقصد"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="37dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/them_name"
+        app:layout_constraintStart_toEndOf="@+id/price"
+        app:layout_constraintTop_toBottomOf="@+id/start"
         tools:ignore="MissingConstraints" />
 
     <TextView
-    android:id="@+id/price"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="20000 R"
-    tools:layout_editor_absoluteX="16dp"
-    tools:layout_editor_absoluteY="27dp" />
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="99dp"
+        android:layout_marginStart="16dp"
+        android:text="20000 R"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
